@@ -1,7 +1,7 @@
 <h1 align="center">
-    <img alt="Proffy" src=".github/logo.svg" height="100px" />
+    <img alt="Proffy" src="./github/logo.svg" height="100px" />
     <br>Next Level Week #2<br/>
-    Node.js | ReactJS | React Native
+    Node.js | HTML | CSS | JavaScript
 </h1>
 
 <p align="center">
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img alt="design do projeto" width="650px" src="./.github/design.png" />
+  <img alt="design do projeto" width="650px" src="./github/design.png" />
 <p>
 
 ## :bookmark: Sobre
