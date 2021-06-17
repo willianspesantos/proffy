@@ -1,0 +1,66 @@
+.corpo-estudo .cabecalho {
+    background: var(--cor-primeiro);
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho__top-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1.6rem 0;
+    width: 90%;
+}
+
+.cabecalho__top-bar a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+.cabecalho__top-bar a:hover {
+    opacity: 0.6;
+}
+
+.cabecalho__top-bar > img {
+    height: 2.5rem;
+}
+
+.cabecalho__conteudo {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+.cabecalho__conteudo strong {
+    color: var(--cor-primeiro-titulo);
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+}
+
+.cabecalho__conteudo p {
+    color: var( --cor-primeiro-texto);
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    margin-top: 2.4rem;
+    max-width: 30rem;
+}
+
+@media screen and (min-width: 768px) {   
+
+    .cabecalho__conteudo, .corpo-estudo .principal {
+        max-width: 768px;
+    }
+
+    .cabecalho__conteudo strong {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    .cabecalho__conteudo form {
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);        
+        grid-template-areas:
+        "input input input input";
+    }
+}

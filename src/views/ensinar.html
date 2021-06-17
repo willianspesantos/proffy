@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/cabecalho.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/formulario.css">
+        <link rel="stylesheet" href="css/pagina-ensinar.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <title>Professores -- Proffy</title>
+    </head>
+    <body class="corpo-ensinar">
+        <div class="container">            
+           <header class="cabecalho">
+               <div class="cabecalho__top-bar">
+                   <a href="../">
+                       <img src="img/back.svg" alt="voltar">
+                   </a>
+                   <img src="img/logo@3x.png" alt="logo">
+                </div>
+                <div class="cabecalho__conteudo">
+                    <strong>Que incrivel que você quer dar aulas</strong>
+                    <p>O primeiro passo, é preencher esse formulário de inscrição</p>                    
+               </div>
+           </header>
+           <main class="principal">
+               <form action="/salva-classe" id="cadastro-professor" method="POST">
+                   <fieldset>
+                       <legend>Seus dados</legend>
+                       <div class="bloco-input">
+                           <label for="nome">Nome Completo</label>
+                           <input name="nome" type="text" id="nome" required>
+                        </div>
+                       <div class="bloco-input">
+                           <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
+                           <input name="avatar" type="url" id="avatar" required></div>
+                       <div class="bloco-input">
+                           <label for="whatsapp">Whatsapp <small>(somente números)</small></label>
+                           <input name="whatsapp" type="number" id="avatar" required>
+                        </div>
+                       <div class="bloco-textarea">
+                           <label for="bio">Biografia</label>
+                        <textarea name="bio" id="bio" required></textarea>
+                        </div>
+                   </fieldset>
+                   <fieldset>
+                       <legend>Sobre a aula</legend>
+                       <div class="bloco-selecao">
+                           <label for="selecao"> Matéria</label>
+                           <select name="selecao" id="selecao">
+                            <option value="" >Selecione uma opção</option>                           
+                            {%for selecao in selecoes %}
+                                <option value="{{loop.index}}">{{selecao}}</option>
+                            {%endfor%}
+                            
+                        </select>
+                       </div>
+                       <div class="bloco-input">
+                            <label for="custo"> 
+                                Custo da sua Hora/Aula
+                                <small>(R$)</small>
+                            </label>
+                            <input name="custo" id="custo" type="number" required>    
+                       </div>
+                   </fieldset>
+                   <fieldset id="itens-cronograma">
+                        <legend>
+                            Horários Disponiveis
+                            <button id="adiciona-tempo" type="button">+ Novo Horário</button>
+                        </legend>
+                        <div class="item-cronograma">
+                            <div class="bloco-selecao">
+                                <label for="semana">Dia da semana</label>
+                                <select name="semana[]" required>
+                                    <option value="" >Selecione uma opção</option>                                    
+                                    {%for semana in semanas %}
+                                        <option value="{{loop.index0}}">{{semana}}</option>
+                                    {%endfor%}                                              
+                                </select>
+                            </div>
+                            <div class="bloco-input">
+                                <label for="nesse_tempo">Das</label>
+                                <input type="time" name="nesse_tempo[]" required >
+                            </div>
+                            <div class="bloco-input">
+                                <label for="ate_tempo">Até</label>
+                                <input type="time" name="ate_tempo[]" required >
+                            </div>
+                        </div>
+                   </fieldset>
+               </form>
+               <footer>
+                   <p>
+                       <img src="img/warning.svg" alt="aviso importante">
+                       Importante!<br>Preencha todos os dados
+                    </p>
+                    <button type="submit" form="cadastro-professor">Salvar formulário</button>
+               </footer>
+           </main>
+        </div>
+        <script src="scripts/adicionaHorario.js"></script>
+    </body>
+</html>

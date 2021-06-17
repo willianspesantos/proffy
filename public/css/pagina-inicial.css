@@ -1,0 +1,157 @@
+
+.corpo-index {
+    background: var(--cor-primeiro);
+}
+
+.corpo-index .container {
+    color: var(--cor-primeiro-texto);
+}
+.container__logo {
+    margin-bottom: 3.2rem;
+    text-align: center;
+}
+
+.container__logo h2{
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+.container__logo img {
+    height: 10rem;
+}
+
+.hero-imagem {
+    width: 100%;
+}
+
+.container__botoes {
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.container__botoes a {
+    align-items: center;
+    border-radius: 0.8rem;
+    color: var(--cor-botao-texto);
+    display: flex;
+    font: 700 2.4rem Archivo;
+    height: 10.4rem;
+    justify-content: center;
+    transition: background 0.3s;
+    text-decoration: none;
+    width: 30rem;
+}
+
+.container__botoes a img {
+    margin-right: 2.4rem;
+    width: 4rem;
+}
+
+.container__botoes___estudo {
+    background: var(--cor-primeiro-suave);
+    margin-right: 1.6rem;
+}
+
+.container__botoes___estudo:hover {
+    background: var(--cor-primeiro-leve)
+}
+
+.container__botoes___ensinar {
+    background: var(--cor-segundo);
+}
+
+.container__botoes___ensinar:hover {
+    background: var(--cor-segundo-escuro);
+}
+
+.container__total-conexoes {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    justify-content: center;
+}
+
+.container__total-conexoes img {
+    margin-left: 0.8rem;
+}
+
+@media screen and (min-width:350px) {
+    :root {
+        font-size: 40%;
+    }   
+
+}
+
+@media screen and (min-width:768px) {
+    :root {
+        font-size: 62.5%;
+    }   
+
+    .container__logo {
+        margin: 0;
+    }
+
+    .container__botoes a {
+        height: 6.4rem;
+        width: 20rem;
+    }
+
+    .hero-imagem {
+        width: 80%;
+        margin: 0 10%;        
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    .corpo-index .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas: 
+        "proffy imagem imagem"
+        "botao botao texto";
+        gap: 60px;
+        max-width: 1024px;
+    }
+
+
+    .container__logo {
+        align-self: center;
+        grid-area: proffy;
+        text-align: initial;
+        margin: 0;
+    }
+
+    .container__logo img {
+        height: 127px;
+    }
+
+    .hero-imagem {
+        height: 350px;
+        grid-area: imagem;
+        margin: 0;
+        width: 100%;
+    }
+
+    .container__botoes {
+        justify-content: flex-start;
+        grid-area: botao;
+        margin: 0;
+    }
+
+    .container__botoes a {
+        height: 10.4rem;
+        width: 30rem;
+    }
+
+    .container__total-conexoes {
+        font-size: 1.2rem;
+        justify-self: end;
+        grid-area: texto;
+    }
+
+}

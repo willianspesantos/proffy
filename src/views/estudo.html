@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/cabecalho.css">
+        <link rel="stylesheet" href="css/formulario.css">
+        <link rel="stylesheet" href="css/pagina-estudo.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <title>Professores -- Proffy</title>
+    </head>
+    <body class="corpo-estudo">
+        <div class="container">            
+           <header class="cabecalho">
+               <div class="cabecalho__top-bar">
+                   <a href="../">
+                       <img src="img/back.svg" alt="voltar">
+                   </a>
+                   <img src="img/logo@3x.png" alt="logo">
+               </div>
+               <div class="cabecalho__conteudo">
+                    <strong>Esses são os proffys disponíveis</strong>
+                    <form class="procurar-professores">
+                        <div class="bloco-selecao">
+                            <label for="selecao">Matéria</label>
+                            <select name="selecao" id="selecao">
+                                <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+                                {%for selecao in selecoes %}
+                                    <option value="{{loop.index}}" {{ "selected" if filtros.selecao == loop.index }}>
+                                        {{selecao}}
+                                    </option>
+                                {%endfor%}
+                                
+                            </select>
+                        </div>
+                        <div class="bloco-selecao">
+                            <label for="semana">Dia da semana</label>
+                            <select name="semana" id="semana">
+                                <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+                                {%for semana in semanas %}
+                                    <option value="{{loop.index0}}" {{ "selected" if filtros.semana == loop.index0 }}>
+                                        {{semana}}
+                                    </option>
+                                {%endfor%}
+                                                          
+                            </select>
+                        </div>
+                        <div class="bloco-input">
+                            <label for="tempo">Hora</label>
+                            <input name="tempo" id="tempo" type="time">
+                        </div>
+                        <button type="submit">Filtrar</button>
+                    </form>
+               </div>
+           </header>
+           <main class="principal">
+                
+                {% if proffys == "" %}
+                    <p class="nenhum-resultado">Nenhum resultado encontrado com a sua pesquisa.</p>
+                {% else %}
+
+                    {%for proffy in proffys %}
+                        <article class="item-professor">
+                            <header>
+                                <img src="{{proffy.avatar}}" alt="{{proffy.nome}}">
+                                <div>
+                                    <strong>{{proffy.nome}}</strong>
+                                    <span>{{proffy.selecao}}</span>
+                                </div>
+                            </header>
+                            <p>{{proffy.bio}}</p>
+                            <footer>
+                                <p>Preço/Hora<strong>R$: {{proffy.custo}}</strong>
+                                </p>
+                                <a href="https://api.whatsapp.com/send?l=pt_BR&phone=55{{proffy.whatsapp}}&text=Tenho interesse na sua aula de {{proffy.selecao}} {{proffy.nome}}" class="botao" target="_blank">
+                                    <img src="img/whatsapp.png" alt="whatsapp">    
+                                    Entrar em contato
+                                </a>
+                            </footer>
+                        </article>
+                    {%endfor%}
+
+                {% endif %}
+
+    
+           </main>
+        </div>
+    </body>
+</html>

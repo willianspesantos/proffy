@@ -1,0 +1,54 @@
+:root {
+    /*variaveis css*/
+    --cor-background: #F0F0F7;
+    --cor-primeiro-suave: #9871F5;
+    --cor-primeiro-leve: #916BEA;
+    --cor-primeiro:#8257E5;
+    --cor-primeiro-escuro: #774DD6;
+    --cor-primeiro-escurecido: #6842C2;
+    --cor-segundo: #04D361;
+    --cor-segundo-escuro: #04BF58;
+    --cor-primeiro-titulo: #FFFFFF;
+    --cor-primeiro-texto: #D4C2FF;
+    --cor-titulo-texto: #32264D;
+    --cor-complemento-texto: #9C98A6;
+    --cor-texto-base: #6A6180;
+    --cor-linha-no-branco: #E6E6F0;
+    --cor-input-background: #F8F8FC;
+    --cor-botao-texto: #FFFFFF;
+    --cor-caixa-base: #FFFFFF;
+    --cor-caixa-rodape:#FAFAFC;
+    --cor-info-pequeno: #C1BCCC;
+
+    font-size: 60%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.corpo-index {
+    align-items: center;
+    background: var(--cor-background);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+body, input, button, textarea {
+    font: 500 1.6rem Poppins;
+    color: var(--cor-texto-base);
+}
+
+.corpo-index .container {
+    max-width: 700px;
+    width: 90vw;
+}
+
+@media screen and (min-width: 700px) {
+    :root {
+        font-size: 62.5%;
+    }
+}

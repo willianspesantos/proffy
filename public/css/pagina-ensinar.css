@@ -1,0 +1,148 @@
+.corpo-ensinar {
+    height: 100vh;
+    width: 100vw;
+}
+
+.corpo-ensinar .cabecalho {
+    background: var(--cor-primeiro);
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo-ensinar .cabecalho__conteudo {
+    padding-bottom: 6.4rem;
+    max-width: 74rem;
+}
+
+.corpo-ensinar .principal {
+    background: var(--cor-caixa-base);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: .8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+}
+
+.corpo-ensinar fieldset {
+    border: none;
+    padding: 0 2.4rem;
+}
+
+.corpo-ensinar fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: var(--cor-titulo-texto);
+    margin-bottom: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--cor-linha-no-branco);
+}
+
+.corpo-ensinar fieldset legend button {
+    background: none;
+    border: 0;
+    color: (--cor-primeiro);
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    transition: 0.2;
+}
+
+
+
+.corpo-ensinar fieldset+fieldset {
+    margin-top: 6.4rem;
+}
+
+.corpo-ensinar .bloco-input+.bloco-input, .corpo-ensinar .bloco-input+.bloco-textarea, .corpo-ensinar .bloco-selecao+.bloco-input {
+    margin-top: 2.4rem;
+}
+
+.corpo-ensinar main footer {
+    background: var(--cor-caixa-rodape);
+    border-top: 1px solid var(--cor-linha-no-branco);
+    margin-top: 6.4rem;
+    padding: 4rem 2.4rem;
+}
+
+.corpo-ensinar main footer p {
+    align-items: center;
+    color: var(--cor-complemento-texto);
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    line-height: 2.4rem;
+}
+
+.corpo-ensinar main footer p img {
+    margin-right: 2rem;
+}
+
+.corpo-ensinar main footer button {
+    align-items: center;
+    background: var(--cor-segundo);
+    border: 0;
+    border-radius: .8rem;
+    color: var(--cor-botao-texto);
+    cursor: pointer;
+    display: flex;
+    font: 700 1.6rem Archivo;
+    height: 5.6rem;
+    justify-content: center;
+    margin-top: 3.2rem;
+    text-decoration: none;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.corpo-ensinar main footer button:hover {
+    background: var(--cor-segundo-escuro);
+}
+
+.item-cronograma+.item-cronograma {
+    margin-top: 3.2rem;
+    padding-top: 3.2rem;
+    border-top: 1px solid var(--cor-linha-no-branco);
+}
+
+@media screen and (min-width: 768px) {
+    .corpo-ensinar .cabecalho .cabecalho__conteudo {
+        margin-bottom: 0;
+    }
+
+    .corpo-ensinar .cabecalho .cabecalho__conteudo strong {
+        justify-content: flex-start;
+    }
+
+    .corpo-ensinar main fieldset {
+        padding: 0 64px;
+    }
+
+    .item-cronograma {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.6rem;
+    }
+
+    #itens-cronograma .bloco-input {
+        margin-top: 0;
+    }
+
+    .corpo-ensinar main footer {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 64px;
+        max-width: 62rem;
+        margin: 6.4rem auto 0;
+    }
+
+    .corpo-ensinar main footer button {
+        margin-top: 0;
+        width: 200px;
+    }
+}
+
+
